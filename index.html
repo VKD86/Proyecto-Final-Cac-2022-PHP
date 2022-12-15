@@ -1,0 +1,287 @@
+<?php
+include("conexion.php");
+
+$conexion = conexion();
+
+$sql = "SELECT * FROM lista_oradores_inscriptos";
+
+$query = mysqli_query($conexion, $sql);
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Conferencia Buenos Aires">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Codo a Codo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--FONTS-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito+Sans:ital,wght@0,400;0,700;0,800;1,300;1,600&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/styles.css">
+
+    <title>Proyecto Final CaC 2022</title>
+</head>
+<body>
+    <header>
+    <!--Nav-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#ConfBA">
+                <img src="./Img/codoacodo.png" alt="Logo" width="100" height="90" class="d-inline-block align-text-center">Conf Bs As</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active link-light" aria-current="page" href="#ConfBA">La conferencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-secondary" href="#Oradores">Los oradores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-secondary" href="#BAOctubre">El lugar y la fecha</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-secondary" href="#Form">Conviértete en orador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-success" href="#seccionOculta" id="idComprarTickets">Comprar tickets</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    <!--Fin Nav-->
+    </header>
+    <main> 
+      <section> <!--SECCION INICIAL-->
+        <div class="divInicial">
+          <a name="ConfBA"></a>
+          <h2>Conf Bs As</h2> 
+          <p>Bs As llega por primera vez a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
+          </p>
+          <div>
+            <button type="button" class="btn btn-outline-light btnMedia enlaceDif">
+              <a href="#Form">Quiero ser orador</a></button>
+            <button type="button" class="btn btn-success btnMedia enlaceDif" id="idComprarTickets2">
+              <a href="#seccionOculta">Comprar Tickets</a>
+            </button>
+          </div>    
+        </div> 
+      </section><!-- FIN SECCION INICIAL-->
+      <section> <!-- SECCION ORADORES-->
+            <div class="container mt-3">
+              <a name="Oradores"></a>
+              <h6>CONOCE A LOS</h6>
+              <h3>ORADORES</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="./Img/steve.jpg" class="card-img-top" alt="Fotografía de Steve Jobs">
+                        <div class="card-body">
+                          <span class="badge text-bg-warning">JavaScript</span>
+                          <span class="badge fondo">React</span>
+                          <h5 class="card-title cardTitleSteveBillAda">Steve Jobs</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, minus nisi. Dignissimos libero asperiores neque rerum! Et hic cum quaerat cumque? Enim eius non officia nam corporis fuga voluptate veritatis!</p>
+                        </div>    
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="./Img/bill.jpg" class="card-img-top" alt="Fotografía de Bill Gates">
+                        <div class="card-body">
+                          <span class="badge text-bg-warning">JavaScript</span>
+                          <span class="badge fondo">React</span>
+                          <h5 class="card-title cardTitleSteveBillAda">Bill Gates</h5>
+                          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro dolores ullam nulla saepe similique aliquam eaque nostrum iste exercitationem, suscipit quaerat accusamus. Nostrum, rem. Omnis possimus esse quaerat veritatis totam?</p>
+                        </div>   
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="./Img/ada.jpeg" class="card-img-top" alt="Fotografía de Lovelace">
+                        <div class="card-body">
+                          <span class="badge text-bg-secondary">Negocios</span>
+                          <span class="badge text-bg-danger">Startups</span>
+                          <h5 class="card-title cardTitleSteveBillAda">Ada Lovelace</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque commodi minima hic aperiam, reiciendis adipisci facere voluptatem earum, illum veniam vitae itaque impedit ipsam. Illo totam sit nisi laudantium reiciendis?</p>
+                        </div>   
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!--FIN SECCION ORADORES-->
+        </section>
+        <section>  <!--BA OCTUBRE-->
+            <a name="BAOctubre"></a>
+            <div class="card cardBAOctubre" style="max-width: 100%">
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <img src="./Img/honolulu.jpg" class="img-fluid rounded-start" alt="Imagen de Honolulu">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body cardColor">
+                      <h5 class="card-title">Bs As - Octubre</h5>
+                      <p class="card-text">Buenos Aires es la provincia y localidad más grande del estado de Argentina, en los Estados Unidos. Honolulu es la más sureña de entre las principales ciudades estadounidenses. Aunque el nombre de Honolulu se refiere al área urbana en la costa sureste de la isla de Oahu, la ciudad y el condado de Honolulu han formado una ciudad-condado consolidada que cubre toda la ciudad (aproximadamente 600 km2 de superficie).</p>
+                      <button type="button" class="btn btn-outline-light">Conocé más</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FIN BA OCTUBRE-->
+        </section>
+        <section> <!--FORMULARIO ORADORES-->
+            <a name="Form"></a>
+            <div class="container">
+                <h6>CONVIÉRTETE EN UN</h6>
+                <h3>ORADOR</h3>
+                <p>Anótate como orador para dar una <span class="delineado">charla ignite</span>. Cuéntanos de qué quieres hablar!
+                </p>
+            <form name="formulario" action="datosIngresadosFormOradores.php" method="post" id="_formulario_oradores_">
+              <div class="row divFormulario justify-content-center">
+                <div class="col">
+                  <input type="text" name="nombre" class="form-control" id="idNombre" placeholder="Nombre" onfocusout="validarNombre()">
+                </div>
+                <div class="col">
+                  <input type="text" name="apellido" class="form-control" id="idApellido" placeholder="Apellido" onfocusout="validarApellido()">
+                </div>
+              </div>
+              <div class="row">
+              <div class="col mb-3">
+                <textarea form="_formulario_oradores_" id="idMensaje" name="temaCharla" class="form-control divTextArea" rows="4" maxlength="250" placeholder="Sobre qué quieres hablar? (mínimo 15 caracteres)" onfocusout="validarMensaje()"></textarea>
+              </div>
+              <div class="form-text mb-3 textoIzquierda">
+                  Recuerda incluir un título para tu charla.
+              </div>
+              <div class="d-grid">
+                <input id="idEnviar" type="submit" class="submit btn btn-lg btn-form"></input>
+              </div>
+              <div class="mt-2">
+                <p id="mensajeNombre" class="text-danger"></p>
+                <p id="mensajeApellido" class="text-danger"></p>
+                <p id="mensajeForm" class="text-danger"></p>
+              </div> 
+            </form>
+        </section> <!-- FIN FORMULARIO ORADORES-->
+        <section class="seccionCompra d-none" id=seccionCompra> <!--SECCION OCULTA PARA COMPRAR TICKETS-->
+          <a name="seccionOculta"></a>
+          <div class="tarifas">
+            <div class="card tarifaEstudiante">
+              <div class="card-body">
+                <h5 class="card-title">Estudiante</h5>
+                <p class="card-text">Tienen un descuento</p>
+                <h5 class="card-title">80%</h5>
+                <p class="card-text textoDocumentacion"><small class="text-muted">*presentar documentación</small></p>
+              </div>
+            </div>
+            <div class="card tarifaTrainee">
+              <div class="card-body">
+                <h5 class="card-title">Trainee</h5>
+                <p class="card-text">Tienen un descuento</p>
+                <h5 class="card-title">50%</h5>
+                <p class="card-text textoDocumentacion"><small class="text-muted">*presentar documentación</small></p>
+              </div>
+            </div>
+            <div class="card tarifaJunior">
+              <div class="card-body">
+                <h5 class="card-title">Junior</h5>
+                <p class="card-text">Tienen un descuento</p>
+                <h5 class="card-title">15%</h5>
+                <p class="card-text textoDocumentacion"><small class="text-muted">*presentar documentación</small></p>
+              </div>
+            </div>
+          </div>
+          <h6 class="tituloVenta">VENTA</h6>
+          <h1>VALOR DE TICKET $200</h1>
+          <form class="formularioOculto">
+            <div class="row justify-content-center">
+              <div class="col">
+                <input id="inputNombre" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+              </div>
+              <div class="col mb-3">
+                <input id="inputApellido" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+              </div>
+            </div>
+            <div class="mb-3 col">
+              <input id="inputCorreoElectronico" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo">
+            </div>
+            <div class="row">
+              <div class="col mb-3">
+                <label class="mb-3">Cantidad</label>
+                <input id="inputCantidad" type="number" min="1" max="10" class="form-control" placeholder="cantidad">
+              </div>
+              <div class="col">
+                <label class="mb-3">Categoría</label>
+                <select id="selectCategoria" class="form-select" aria-label="Default select example" required>
+                  <option value="0" selected>-Seleccionar categoría-</option>
+                  <option value="1">Sin categoría</option>
+                  <option value="2">Estudiante</option>
+                  <option value="3">Trainee</option>
+                  <option value="4">Junior</option>
+                </select>
+              </div>  
+            </div>
+            <div class="totalTransaccion form-control">
+              <p id="totalCompra">Total a Pagar: $</p>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-sm-6">
+                <button id="btnBorrar"  class="btn btnEstilo btn-lg" type="reset">Borrar</button>
+              </div>
+              <div class="col-sm-6">  
+                <button id="btnResumen" class="btn btnEstilo btn-lg" type="button">Resumen</button>
+              </div>
+            </div>
+            <div>
+              <p id="alertaNombre" class="text-danger"></p>
+              <p id="idEmail" class="text-danger"></p>
+              <p id="alertaTickets" class="text-danger"></p>
+              <p id="alertaCategoria" class="text-danger"></p>
+            </div>
+          </form>
+        </section> <!--FIN SECCION OCULTA-->
+    </main>
+    <footer>
+        <div class="footerBg mt-3">
+            <ul class="nav justify-content-center align-items-center">
+                <li class="nav-item itemPF">
+                  <a class="nav-link active">Preguntas<br>frecuentes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Contactános</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Prensa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Conferencias</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Términos y <br>condiciones</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Privacidad</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active">Estudiantes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="login.php">Uso interno</a>
+                </li>
+              </ul>
+        </div>
+    </footer>
+      <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+      <!--MI JS-->
+    <script src="./scripts.js"></script>
+</body>
+</html>
